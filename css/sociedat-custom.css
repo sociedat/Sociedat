@@ -1,5 +1,28 @@
+/*TEAM CONTENT*/
 .col-centered {
     display: inline-block;
     float: none;
     
 }
+
+.member-description {
+    display: none;
+}
+
+.team-block:hover{
+    z-index:10;
+    -webkit-transform:scale(1.01);
+    -ms-transform:scale(1.01);
+    transform:scale(1.01)
+}
+
+#memberModal {
+    vertical-align: middle;
+}
+
+#memberModal .modal-content {
+    max-width: 436px;
+    padding: 30px 20px;
+}
+
+
