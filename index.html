@@ -216,7 +216,7 @@
 						<div class="section-header">
 						<div class="wow bounceIn"data-animation-delay="7.8s">
 						
-							<h2 class="section-heading animated"  >Nuestros servicios</h2>
+							<h2 class="section-heading animated">Nuestros servicios</h2>
 							<h4>Neque porro quisquam est, qui dolorem ipsum quia dolor.</h4>
 						
 						</div>
@@ -235,6 +235,7 @@
 									</div>
 										<h2><a href="#">Cursos</a></h2>
 										<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                                        <a href="#" class="line-btn green" data-toggle="modal" data-target="#modalInfo">Informes</a>
 								</div>
 							</div>
 						</div>
@@ -250,8 +251,9 @@
 									<div class="service-icon">
 										<figure><i class="fa fa-desktop"></i></figure>
 									</div>
-										<h2><a href="#">Capacitaciones</a></h2>
-										<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                                    <h2><a href="#">Capacitaciones</a></h2>
+                                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                                    <a href="" class="line-btn green" data-toggle="modal" data-target="#modalInfo">Informes</a>
 								</div>
 							</div>	
 						</div>
@@ -267,6 +269,7 @@
 								</div>
 									<h2><a href="#">Eventos</a></h2>
 									<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
+                                    <a href="" class="line-btn green" data-toggle="modal" data-target="#modalInfo">Informes</a>
 							</div>
 						</div>
 					</div>
@@ -576,7 +579,7 @@
 												20% off future purchases
 											</li>
 											<li class="line-btn-row">
-												<a href="" class="line-btn light">Inscribirme</a>
+												<a href="" class="line-btn light" data-toggle="modal" data-target="#modalMembership">Inscribirme</a>
 											</li>
 										</ul>
 									</div>
@@ -602,7 +605,7 @@
 												Access all new themes
 											</li>
 											<li class="line-btn-row">
-												<a href="" class="line-btn green">Inscribirme</a>
+												<a href="" class="line-btn green" data-toggle="modal" data-target="#modalMembership">Inscribirme</a>
 											</li>
 										</ul>
 									</div>
@@ -628,7 +631,7 @@
 												Access all new themes
 											</li>
 											<li class="line-btn-row">
-												<a href="" class="line-btn light">Inscribirme</a>
+												<a href="" class="line-btn light" data-toggle="modal" data-target="#modalMembership">Inscribirme</a>
 											</li>
 										</ul>
 									</div>
@@ -915,7 +918,7 @@
         
     <!--  MODALS  -->
     
-    <!-- Modal -->
+    <!-- Modal MEMBERS DESCRIPTION-->
     <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -926,7 +929,218 @@
             </div>
         </div>
     </div>
+        
+    <!-- Modal INFO -->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Solicita información de nuestros cursos</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <form class="form-horizontal" name="serviceRequest" action="telegram_bot.php" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="userName" placeholder="Nombre completo" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="e-mail" required>
+                                </div>                                
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" value="Curso que deseas" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="perfil" placeholder="Perfil de los estudiantes" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="duracion" placeholder="Duración deseada" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="serviceName">
+                                    <input type="hidden" class="form-control" name="providerName">
+                                    <input type="hidden" class="form-control" name="servicePrice">
+                                </div>                                
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary line-btn green">ENVIAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+        
+    <!-- Modal NEW MEMBER -->
+    <div class="modal fade" id="modalMembership" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registro de nuevo miembro</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <form class="form-horizontal" name="serviceRequest" action="telegram_bot.php" method="POST"> 
+                                                                
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Comprobante de pago</label>
+                                    <p class="help-block">Para iniciar tu registro por favor adjunta una imagen de tu comprobante de pago ().</p>
+                                    <input type="file" id="exampleInputFile" value="Seleccionar archivo">                                    
+                                </div>
+                                                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Nombre:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="userFirstName" placeholder="Nombre" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Apellidos:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="userLastName" placeholder="Apellidos" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Fecha de nacimiento:</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="birth" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Género:</label>
+                                    <div class="col-sm-9">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="F"> Femenino
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="M"> Masculino
+                                        </label>
+                                    </div>
+                                </div>                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Nacionalidad:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Grado académico:</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control">
+                                            <option>Licenciatura</option>
+                                            <option>Maestría</option>
+                                            <option>Doctorado</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Ocupación actual:</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control">
+                                            <option>Estudiante</option>
+                                            <option>Docente</option>
+                                            <option>Empleado</option>
+                                            <option>Investigador</option>
+                                            <option>Consultor</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Correo-e:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Twitter:</label>
+                                    <div class="col-sm-9">
+                                        <!-- <p class="form-control-static">@usuario</p> -->
+                                        <input type="text" class="form-control" id="" placeholder="@usuario">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Facebook:</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" id="" placeholder="www.facebook.com/user">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Instagram:</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">LinkedIn:</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">GitHub:</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Descripción general, intereses (Cuéntanos un poco de ti):</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Publicaciones (Describe las publicaciones con las que cuentas y compartenos la liga):</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>¿Asistes a seminarios, conferencias, seminarios, meetups?</label>
+                                    <div class="col-sm-9">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Sí
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0"> No
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>¿Qué temas te gustaría que se difundieran, relacionados con ciencia de datos?</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>¿Te gustaría colaborar a que la ciencia de datos se difunda y crezca en México? Platícanos cómo:</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>¿Te gustaría dar pláticas o conferencias? .... cuéntanos tus temas</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>                   
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
 	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
