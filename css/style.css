@@ -457,23 +457,23 @@ padding-top: 30px;
 ============================= */
 
 #parallax1{	
-	background-image: url(../img/parallax/4.jpg);
+	background-image: url(../img/carousel/slide2.png);
 	height:500px;
 }
 #parallax2{	
-	background-image: url(../img/parallax/2.jpg);
+	background-image: url(../img/carousel/slide3.jpg);
 	height:500px;
 }
 #testimonials{	
-	background-image: url(../img/1.jpg);
+	background-image: url(../img/backgrounds/bg2.jpg);
 	height:500px;
 }
 #testimonials-3{	
-	background-image: url(../img/12.jpg);
+	background-image: url(../img/backgrounds/bg1.jpg);
 	height:500px;
 }
 #testimonials-2{	
-	background-image: url(../img/6.jpg);
+	background-image: url(../img/backgrounds/bg3.jpg);
 	height:500px;
 }
 
