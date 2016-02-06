@@ -92,42 +92,10 @@
 						</div>
 					</div>
 				</div>
-                
-                <div class="wow bounceIn" data-animation-delay="4.8s">
-                    <div class="row blog-entry">
-                        <div class="col-md-3">
-                            <figure><img class="img-circle" src="img/carousel-mini/slide2.png" alt=""></figure>
-                        </div>
-                        <div class="col-md-9">
-                            <h2 class="section-heading animated" data-animation="bounceInUp">Título de la entrada</h2>
-                            <h4 class="section-heading animated" data-animation="bounceInUp">Categoría</h4>
-                            <hr>
-                            <p class="section-heading animated" data-animation="bounceInUp">
-                                Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum. <br>
-                                <a href="#">Continuar leyendo</a><br>
-                                Fecha
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="wow bounceIn" data-animation-delay="4.8s">
-                    <div class="row blog-entry">
-                        <div class="col-md-3">
-                            <figure><img class="img-circle" src="img/carousel-mini/slide1.jpg" alt=""></figure>
-                        </div>
-                        <div class="col-md-9">
-                            <h2>Título de la entrada</h2>
-                            <h4>Categoría</h4>
-                            <hr>
-                            <p>
-                                Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum. <br>
-                                <a href="#">Continuar leyendo</a><br>
-                                Fecha
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="wow bounceIn" data-animation-delay="4.8s">
+                <?php
+                    include 'php/wordpress_feed.php';
+                ?>
+                <!--  <div class="wow bounceIn" data-animation-delay="4.8s">
                     <div class="row blog-entry">
                         <div class="col-md-3">
                             <figure><img class="img-circle" src="img/carousel-mini/slide3.jpg" alt=""></figure>
@@ -143,7 +111,10 @@
                             </p>
                         </div>
                     </div>
-                </div>   
+                </div>   -->
+                <!-- <div class="wow bounceIn" data-animation-delay="4.8s">
+                    <a href="https://sociedatblog.wordpress.com/" target="_blank"><h4 class="text-center green"><span>Ver más publicaciones...</span></h4></a>
+                </div> -->
 			</div>
 			
 		</div>

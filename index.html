@@ -856,7 +856,7 @@
 							<div id="sendmessage">
 								 Your message has been sent. Thank you!
 							</div>
-							<form action="contact/contact.php" method="post" role="form" class="contactForm">
+							<form action="php/contact.php" method="post" role="form" class="contactForm">
 							<div class="wow bounceIn">
 							  <div class="form-group">
 								<!-- <label for="name">Your Name</label> -->
@@ -947,7 +947,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                            <form class="form-horizontal" name="serviceRequest" action="telegram_bot.php" method="POST">
+                            <form class="form-horizontal" name="serviceRequest" action="php/mail_info.php" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="userName" placeholder="Nombre completo" required>
                                 </div>
@@ -959,25 +959,21 @@
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="perfil" placeholder="Perfil de los estudiantes" required>
+                                    <input type="text" class="form-control" name="profile" placeholder="Perfil de los estudiantes" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="duracion" placeholder="Duración deseada" required>
+                                    <input type="text" class="form-control" name="duration" placeholder="Duración deseada" required>
                                 </div>
-                                <div class="form-group">
-                                    <input type="hidden" class="form-control" name="serviceName">
-                                    <input type="hidden" class="form-control" name="providerName">
-                                    <input type="hidden" class="form-control" name="servicePrice">
-                                </div>                                
-                            </form>
+                            
                             
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary line-btn green">ENVIAR</button>
+                    <button type="submit" class="btn btn-primary line-btn green" name="getInfo">ENVIAR</button>
                 </div>
+                            </form>
             </div>
         </div>
     </div>
