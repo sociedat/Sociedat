@@ -25,6 +25,23 @@
     padding: 30px 20px;
 }
 
+section#team {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+section#team #team-content {
+    padding-top: 5px;
+}
+
+#team-content .team-member.team-block {
+    margin-bottom: 15px;
+} 
+
+#team-content .team-detail h4 {
+    margin-bottom: 5px;
+}
+
 
 /*Blog*/
 
