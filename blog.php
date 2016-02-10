@@ -47,7 +47,7 @@
 						<li><a href="index.html#services">Servicios</a></li>
 						<li><a href="index.html#team">Equipo</a></li>
 						<li><a href="index.html#line-pricing">Membresías</a></li>
-						<li><a href="index.html#section-works">Portafolio</a></li>
+						<li><a href="index.html#section-works">Redes Sociales</a></li>
                         <li><a href="index.html#">Blog</a></li>
 						<li><a href="index.html#section-contact">Contacto</a></li>
 					</ul>
