@@ -57,7 +57,7 @@ section#team #team-content {
 /* MEMBERSHIPS  */
 
 .memberships {
-    margin-top: 35px;
+    margin-top: 20px;
     margin-bottom: 100px;
     font-family: 'Raleway', sans-serif;
 }
@@ -143,4 +143,9 @@ section#team #team-content {
     padding-bottom: 40px;
     margin-top: 35px;
 }
+
+#line-pricing .container {
+    padding-top: 70px;
+}
+
 
