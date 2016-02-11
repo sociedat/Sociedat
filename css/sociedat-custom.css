@@ -149,3 +149,10 @@ section#team #team-content {
 }
 
 
+/*  SERVICES  */
+
+#services .service-container {
+    padding-top: 0;
+}
+
+
