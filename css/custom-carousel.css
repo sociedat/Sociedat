@@ -1,5 +1,5 @@
 html,body{height:100%;}
-.carousel,.item,.active,.slide {
+#main-carousel.carousel,#main-carousel .item,.active,#main-carousel.slide {
     height:680px;
 }
 
@@ -54,6 +54,21 @@ html,body{height:100%;}
         font-size: 1.5em;
     }
 }
+
+
+/*Carousel mini */
+
+#about-carousel .carousel,.item,.active,.slide {
+    height:317px;
+}
+
+#about-carousel .carousel-inner > .item > img {
+    height:317px;
+}
+
+
+
+
 
 
 

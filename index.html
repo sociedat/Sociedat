@@ -14,7 +14,7 @@
 		<!--<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" /> -->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
-		<link href="css/responsive-slider.css" rel="stylesheet">
+		<!-- <link href="css/responsive-slider.css" rel="stylesheet"> -->
 		<!-- <link rel="stylesheet" href="css/animate.css"> -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -64,7 +64,7 @@
 <section class="featured">
 	<div id="index">
         <!-- Responsive slider - START -->
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div id="main-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -101,10 +101,10 @@
             </div>
 
             <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
                 <span class=""><i class="fa fa-angle-left fa-3x"></i></span>
             </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
                 <span class=""><i class="fa fa-angle-right fa-3x"></i></span>
             </a>
         </div>
@@ -121,7 +121,7 @@
 						<div class="title">
 							<div class="wow bounceIn">
 						
-							<h2 class="section-heading animated" data-animation="bounceInUp">Nosotros</h2>
+							<h2 class="section-heading animated" data-animation="bounceInUp">NOSOTROS</h2>
 							
 						
 							</div>
@@ -132,22 +132,33 @@
 			
 					<div class="row-slider">
 						<div class="col-lg-6 mar-bot30">
-							<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
-								<div class="slides" data-group="slides">
-									<ul>
-  	    		
-										<div class="slide-body" data-group="slide">
-											<li><img alt="" class="img-responsive" src="img/carousel-mini/slide1.jpg" width="100%" height="350"/></li>
-											<li><img alt="" class="img-responsive" src="img/carousel-mini/slide2.png" width="100%" height="350"/></li>
-											<li><img alt="" class="img-responsive" src="img/carousel-mini/slide3.jpg" width="100%" height="350"/></li>
 							
-										</div>
-									</ul>
-										<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-										<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>
-								
-								</div>
-							</div>
+                            
+                            <!-- Responsive slider - START -->
+                            <div id="about-carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="img/carousel-mini/slide1.jpg" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/carousel-mini/slide2.png" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/carousel-mini/slide3.jpg" alt="">
+                                    </div>
+                                </div>
+
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#about-carousel" role="button" data-slide="prev">
+                                    <span class=""><i class="fa fa-angle-left fa-3x"></i></span>
+                                </a>
+                                <a class="right carousel-control" href="#about-carousel" role="button" data-slide="next">
+                                    <span class=""><i class="fa fa-angle-right fa-3x"></i></span>
+                                </a>
+                            </div>
+                            <!-- Responsive slider - END -->
+                            
 						</div>
 					
 						<div class="col-lg-6 ">
@@ -159,31 +170,10 @@
 								<h4><span>Visión </span></h4>
 								<p>Ser el referente en ciencia de datos en México y América Latina.</p>
 							</div>
-							<!-- <div class="list-style">
-								<div class="row">
-									<div class="col-lg-6 col-sm-6 col-xs-12">
-										<ul>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Fermentum Pellentesque</li>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Nullam id dolor id nibh</li>
-										</ul>
-									</div>
-									<div class="col-lg-6 col-sm-6 col-xs-12">
-										<ul>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Fermentum Pellentesque</li>
-											<li>Sollicitudin Vestibulum</li>
-											<li>Nullam id dolor id nibh</li>
-										</ul>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					
 					</div>	
-				</div>
-					
+				</div>					
 			</div>
 			
 		</div>
@@ -222,7 +212,7 @@
 					<div class="col-md-offset-3 col-md-6">
 						<div class="section-header">
 						<div class="wow bounceIn"data-animation-delay="7.8s">
-							<h2 class="section-heading animated">Nuestros servicios</h2>
+							<h2 class="section-heading animated">NUESTROS SERVICIOS</h2>
 						</div>
 						</div>
 					</div>
