@@ -54,3 +54,93 @@ section#team #team-content {
     height: 240px;
 }
 
+/* MEMBERSHIPS  */
+
+.memberships {
+    margin-top: 35px;
+    margin-bottom: 100px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.memberships .line-head-row {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+.memberships .thumbnail {
+    padding: 40px 20px;
+}
+
+.line-price-row p {
+    margin: 0;
+}
+
+.line-price-row small {
+  font-size: 18px;
+  color: #b3b3b3;
+  list-style: none;
+}
+
+.line-price-row span {
+  font-size: 72px;
+  color: #8fc843;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 100%;
+}
+
+.line-price-row span.symbol {
+  position: relative;
+  font-size: 24px;
+  color: #000000;
+  font-weight: normal;
+  font-family: 'Raleway', sans-serif;
+  top: -15px;
+}
+
+.line-btn-row  {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.memberships hr {
+    border-top: 2px solid #eee;
+}
+
+.thumbnail.highlithed-thumbnail {
+    border: 2px solid #8fc843;
+    padding: 0;
+}
+
+.highlithed-top {
+    background: #8fc843;
+    padding: 40px 20px 30px 20px;
+}
+
+.highlithed-top .line-head-row {
+    color: #fff;
+}
+
+.highlithed-top .line-price-row {
+    color: #fff;
+}
+
+.highlithed-top span.symbol {
+    color: #fff;
+}
+
+.highlithed-top span {
+    color: #fff;
+}
+
+.highlithed-top small {
+    color: #fff;
+}
+
+.highlithed-bottom {
+    padding-bottom: 40px;
+    margin-top: 35px;
+}
+
