@@ -841,9 +841,23 @@
                             <form class="form-horizontal" name="serviceRequest" action="telegram_bot.php" method="POST"> 
                                                                 
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Comprobante de pago</label>
-                                    <p class="help-block">Para iniciar tu registro por favor adjunta una imagen de tu comprobante de pago (extensiones .pdf, .jpg, .png).</p>
-                                    <input type="file" id="exampleInputFile" value="Seleccionar archivo">                                    
+                                    <label for="exampleInputFile">
+                                        <span class="badge">1</span> Realiza tu depósto con los siguientes datos:
+                                    </label>
+                                    <dl class="dl-horizontal">
+                                        <dt>Banco:</dt><dd>Bancomer</dd>
+                                        <dt>Cuenta:</dt><dd>0103914755</dd>
+                                        <dt>Sucursal:</dt><dd>3547</dd>
+                                        <dt></dt><dd>A nombre de Sociedad de Científicos de Datos de México AC.</dd>
+                                    </dl>
+                                    <label>
+                                        <span class="badge">2</span> Adjunta tu comprobante de pago
+                                    </label>                                    
+                                    <input type="file" id="exampleInputFile"  value="Seleccionar archivo" required>
+                                    <p class="help-block">(extensiones .pdf, .jpg, .png).</p>
+                                    <label>
+                                        <span class="badge">3</span> LLena el siguiente formulario con tus datos.
+                                    </label>  
                                 </div>
                                                                 
                                 <div class="form-group">
