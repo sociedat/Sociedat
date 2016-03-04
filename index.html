@@ -795,7 +795,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                            <form class="form-horizontal" name="serviceRequest" action="php/mail_info.php" method="POST">
+                            <form class="form-horizontal" name="serviceRequest" action="php/send_forms.php" method="POST">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="userName" placeholder="Nombre completo" required>
                                 </div>
@@ -803,7 +803,7 @@
                                     <input type="email" class="form-control" name="email" placeholder="e-mail" required>
                                 </div>                                
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" id="subject" value="Curso que deseas" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <input type="text" class="form-control" name="requiredCourse" id="subject" value="Curso que deseas" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group">
@@ -819,7 +819,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary line-btn green" name="getInfo">ENVIAR</button>
+                    <button type="submit" class="btn btn-primary line-btn green" name="getInfo" value="getInfo">ENVIAR</button>
                 </div>
                             </form>
             </div>
@@ -838,7 +838,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                            <form class="form-horizontal" name="serviceRequest" action="telegram_bot.php" method="POST"> 
+                            <form class="form-horizontal" name="membershipRequest" action="php/send_forms.php" method="POST"> 
                                                                 
                                 <div class="form-group">
                                     <label for="exampleInputFile">
@@ -853,8 +853,8 @@
                                     <label>
                                         <span class="badge">2</span> Adjunta tu comprobante de pago
                                     </label>                                    
-                                    <input type="file" id="exampleInputFile"  value="Seleccionar archivo" required>
-                                    <p class="help-block">(extensiones .pdf, .jpg, .png).</p>
+                                    <input type="file" id="membership-payment"  value="Seleccionar archivo" name="payment" required>
+                                    <p class="help-block">(extensiones .pdf, .jpg, .png, .bmp).</p>
                                     <label>
                                         <span class="badge">3</span> LLena el siguiente formulario con tus datos.
                                     </label>  
@@ -875,30 +875,31 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Fecha de nacimiento:</label>
                                     <div class="col-sm-9">
-                                        <input type="date" class="form-control" name="birth" required>
+                                        <input type="date" class="form-control" name="  birth" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Género:</label>
                                     <div class="col-sm-9">
                                         <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="F"> Femenino
+                                            <input type="radio" name="userGenre" id="inlineRadio1" value="F" required> Femenino
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="M"> Masculino
+                                            <input type="radio" name="userGenre" id="inlineRadio2" value="M"> Masculino
                                         </label>
                                     </div>
                                 </div>                                
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Nacionalidad:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="" placeholder="">
+                                        <input type="text" name="nationality" class="form-control" id="" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Grado académico:</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control">
+                                        <select name="educationLevel" class="form-control" required>
+                                            <option></option>
                                             <option>Licenciatura</option>
                                             <option>Maestría</option>
                                             <option>Doctorado</option>
@@ -909,7 +910,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Ocupación actual:</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control">
+                                        <select name="occupation" class="form-control" required>
+                                            <option></option>
                                             <option>Estudiante</option>
                                             <option>Docente</option>
                                             <option>Empleado</option>
@@ -922,20 +924,20 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Correo-e:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="" placeholder="">
+                                        <input type="email" name="userMail" class="form-control" id="" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Twitter:</label>
                                     <div class="col-sm-9">
                                         <!-- <p class="form-control-static">@usuario</p> -->
-                                        <input type="text" class="form-control" id="" placeholder="@usuario">
+                                        <input type="text" name="twitterId" class="form-control" id="" placeholder="@usuario">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Facebook:</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="" placeholder="www.facebook.com/user">
+                                      <input type="text" name="facebookId" class="form-control" id="" placeholder="www.facebook.com/user">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -947,59 +949,60 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">LinkedIn:</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="" placeholder="">
+                                      <input type="text" name="linkedinId" class="form-control" id="" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">GitHub:</label>
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="" placeholder="">
+                                      <input type="text" name="githubId" class="form-control" id="" placeholder="">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Descripción general, intereses (Cuéntanos un poco de ti):</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="generalDescription" rows="3" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Publicaciones (Describe las publicaciones con las que cuentas y compartenos la liga):</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="publications" rows="3"></textarea>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label>¿Asistes a seminarios, conferencias, seminarios, meetups?</label>
+                                    <label>¿Asistes a seminarios, conferencias, meetups?</label>
                                     <div class="col-sm-9">
                                         <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Sí
+                                            <input type="radio" name="userGroups" id="seminarios" value="1" required> Sí
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0"> No
+                                            <input type="radio" name="seminarios" id="seminarios" value="0"> No
                                         </label>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>¿Qué temas te gustaría que se difundieran, relacionados con ciencia de datos?</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="interestingTopics" rows="3" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>¿Te gustaría colaborar a que la ciencia de datos se difunda y crezca en México? Platícanos cómo:</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="diffusionIdeas" rows="3" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>¿Te gustaría dar pláticas o conferencias? .... cuéntanos tus temas</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" name="Conferences" rows="3" required></textarea>
                                 </div>
-                            </form>
+                            <!-- </form> -->
                             
                         </div>
                     </div>                   
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
+                    <button type="submit" name="sendMembership" value="sendMembership" class="btn btn-primary line-btn green">Enviar</button>
                 </div>
+                            </form>
             </div>
         </div>
     </div>
@@ -1025,6 +1028,7 @@
     <script src="js/main.js"></script>
         
     <script src="js/sociedat-custom.js"></script>
+    <script src="js/validate-forms.js"></script>
 		 <script src="js/wow.min.js"></script>
 	 <script>
 	 wow = new WOW(
