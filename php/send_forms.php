@@ -13,15 +13,44 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             . "\nDuración deseada: " . $_POST['duration'];
         $subject = "Solicitud de información de cursos SOCIEDAT";
         
-        send_form($subject, $body);
+        send_form($subject, $body, '');
     }
+    
+    if($_POST['sendMembership']){
+        echo '<p>Registro de membresía</p>';
+        $file = $_FILES['payment']['tmp_name'];
+        echo "RUTA del archivo: ".$file."<br><br>    ";
+        $body =  $_POST['payment']."<br>".
+            $_POST['userFirstName']."<br>".
+            $_POST['userLastName']."<br>".
+            $_POST['birth']."<br>".
+            $_POST['userGenre']."<br>".
+            $_POST['nationality']."<br>".
+            $_POST['educationLevel']."<br>".
+            $_POST['occupation']."<br>".
+            $_POST['userMail']."<br>".
+            $_POST['twitterId']."<br>".
+            $_POST['facebookId']."<br>".
+            $_POST['linkedinId']."<br>".
+            $_POST['githubId']."<br>".
+            $_POST['generalDescription']."<br>".
+            $_POST['publications']."<br>".
+            $_POST['userGroups']."<br>".
+            $_POST['interestingTopics']."<br>".
+            $_POST['diffusionIdeas']."<br>".
+            $_POST['giveConferences']."<br>";
+        
+        $subject = "Solicitud de registro de nuevo miembro";
+        send_form($subject, $body, $file);
+    }
+    
 
     
 }
 
 
 
-function send_form($subject, $body){
+function send_form($subject, $body, $file){
         
         $mail = new PHPMailer();   
         
@@ -45,6 +74,8 @@ function send_form($subject, $body){
 
    
         $mail->MsgHTML($body);
+        if($file)
+            $mail->AddAttachment($file);
         //indico destinatario
         $address = "contacto@sociedat.org";
         $mail->AddAddress($address, "Sociedad de Científicos de Datos");
