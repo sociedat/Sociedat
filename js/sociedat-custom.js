@@ -14,8 +14,5 @@ $(document).ready(function() {
     $(".modal#memberModal").on("shown.bs.modal", function() {
         var modalDialog = $(this).find(".modal-dialog");
         modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
-    });
-    
-    
+    });    
 });
-

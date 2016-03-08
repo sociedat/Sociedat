@@ -803,7 +803,7 @@
                                     <input type="email" class="form-control" name="email" placeholder="e-mail" required>
                                 </div>                                
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="requiredCourse" id="subject" value="Curso que deseas" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <input type="text" class="form-control" name="requiredCourse" id="subject" placeholder="Curso que deseas" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject" required/>
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group">
@@ -816,6 +816,12 @@
                             
                         </div>
                     </div>
+                    <div class="service-confirmation">
+                        <h4 class="text-center">Tu solicitud ha sido enviada, en breve nos pondremos en contacto contigo. Gracias!!</h4>
+                    </div>
+                    <div class="service-error">
+                        <h4 class="text-center">Ha ocurrido un error en el envío de tus datos. Por favor inténtalo de nuevo.</h4>
+                    </div>    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
@@ -854,6 +860,7 @@
                                         <span class="badge">2</span> Adjunta tu comprobante de pago
                                     </label>                                    
                                     <input type="file" id="membership-payment"  value="Seleccionar archivo" name="payment" required>
+                                    <input type="hidden" id="payment-filepath" name="payment-filepath">
                                     <p class="help-block">(extensiones .pdf, .jpg, .png, .bmp).</p>
                                     <label>
                                         <span class="badge">3</span> LLena el siguiente formulario con tus datos.
@@ -882,10 +889,10 @@
                                     <label class="col-sm-3 control-label">Género:</label>
                                     <div class="col-sm-9">
                                         <label class="radio-inline">
-                                            <input type="radio" name="userGenre" id="inlineRadio1" value="F" required> Femenino
+                                            <input type="radio" name="userGenre" id="inlineRadio1" value="Femenino" required> Femenino
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="userGenre" id="inlineRadio2" value="M"> Masculino
+                                            <input type="radio" name="userGenre" id="inlineRadio2" value="Masculino"> Masculino
                                         </label>
                                     </div>
                                 </div>                                
@@ -972,10 +979,10 @@
                                     <label>¿Asistes a seminarios, conferencias, meetups?</label>
                                     <div class="col-sm-9">
                                         <label class="radio-inline">
-                                            <input type="radio" name="userGroups" id="seminarios" value="1" required> Sí
+                                            <input type="radio" name="seminarios" id="seminarios" value="Sí" required> Sí
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="seminarios" id="seminarios" value="0"> No
+                                            <input type="radio" name="seminarios" id="seminarios" value="No"> No
                                         </label>
                                     </div>
                                 </div>
@@ -996,7 +1003,12 @@
                             
                         </div>
                     </div>                   
-                    
+                    <div class="service-confirmation-membership">
+                        <h4 class="text-center">Tu solicitud ha sido enviada, en breve nos pondremos en contacto contigo. Gracias!!</h4>
+                    </div>
+                    <div class="service-error-membership">
+                        <h4 class="text-center">Ha ocurrido un error en el envío de tus datos. Por favor inténtalo de nuevo.</h4>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
