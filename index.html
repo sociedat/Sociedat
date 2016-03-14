@@ -726,7 +726,7 @@
 							  </div>
 							</div>
                                 <div class="line-btn-row">
-                                    <button type="submit" class="line-btn green">ENVIAR / SEND</button>
+                                    <button type="submit" class="line-btn green">ENVIAR / SEND</button><a href="upload_files.php">Validar upload</a>
                                 </div>							  
 							</form>
 
@@ -844,6 +844,9 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            
+                            
+                            
                             <form class="form-horizontal" name="membershipRequest" action="php/send_forms.php" method="POST"> 
                                                                 
                                 <div class="form-group">
@@ -859,8 +862,7 @@
                                     <label>
                                         <span class="badge">2</span> Adjunta tu comprobante de pago
                                     </label>                                    
-                                    <input type="file" id="membership-payment"  value="Seleccionar archivo" name="payment" required>
-                                    <input type="hidden" id="payment-filepath" name="payment-filepath">
+                                    <input type="file" id="membership-payment"  value="Seleccionar archivo" name="file_upload" required>
                                     <p class="help-block">(extensiones .pdf, .jpg, .png, .bmp).</p>
                                     <label>
                                         <span class="badge">3</span> LLena el siguiente formulario con tus datos.
@@ -1000,6 +1002,10 @@
                                     <textarea class="form-control" name="Conferences" rows="3" required></textarea>
                                 </div>
                             <!-- </form> -->
+                                <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
+                                <button type="submit" name="sendMembership" value="sendMembership" class="btn btn-primary line-btn green">Enviar</button>
+                            </form>
+                                
                             
                         </div>
                     </div>                   
@@ -1011,10 +1017,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
-                    <button type="submit" name="sendMembership" value="sendMembership" class="btn btn-primary line-btn green">Enviar</button>
+                    
                 </div>
-                            </form>
+                            
             </div>
         </div>
     </div>

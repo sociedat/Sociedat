@@ -3,6 +3,7 @@ header ('Content-type: text/html; charset=utf-8');
 require_once('class.phpmailer.php');
 
 
+
 $begin = '
 <!DOCTYPE html>
 <html>
@@ -36,8 +37,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     
     if($_POST['sendMembership']){
+        print_r($_FILES);
+        echo '---';
+        //require_once('validate_file.php');
         echo 'Registro de membresía<br>';
-        $file = $_FILES['payment']['tmp_name'];
+        print_r($_FILES['file_upload'], true);
+        $file = $_FILES['file_upload']['tmp_name'];
         echo "RUTA del archivo: ".$file."<br><br>    ";
         $body =
             $begin
@@ -102,7 +107,7 @@ function send_form($subject, $body, $file){
     if($file)
         $mail->AddAttachment($file);
     //indico destinatario
-    $address = "contacto@sociedat.org";
+    $address = "vmaceda29@gmail.com";//"contacto@sociedat.org";
     $mail->AddAddress($address, "Sociedad de Científicos de Datos");
     $mail->CharSet = 'UTF-8';
     if(!$mail->Send()) {
