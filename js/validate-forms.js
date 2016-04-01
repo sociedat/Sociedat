@@ -15,6 +15,7 @@ $('#membership-payment').change(function(){
     var ext = this.value.match(/\.(.+)$/)[1];
     switch(ext)
     {
+        case 'jpeg':
         case 'jpg':
         case 'bmp':
         case 'png':
@@ -56,17 +57,21 @@ $('#modalInfo').on('hidden.bs.modal', function() {
 //Send form confirmation for Membership Request
 var $membershipForm = $('form[name=membershipRequest]');
 $membershipForm.submit(function() {
-    var paramArr = $(this).serialize() + '&' + $.param({ sendMembership:'sendMembership'});
-    $.post("php/send_forms.php",
-           paramArr,
-           function(response, status) {
-                if(status == 'success'){
-                    $('.service-confirmation-membership').show();
-                } else {
-                    $('.service-error-membership').show();
-                }
-                showConfirmation_membership = true;
-    });
+    var form_data = new FormData(this);          
+    form_data.append('sendMembership', 'sendMembership');
+    $.ajax({
+        url: 'php/send_forms.php', // point to server-side PHP script 
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,                         
+        type: 'post',
+        success: function(data){
+            //alert(data); // display response from the PHP script, if any
+            console.log(data);
+        }
+     });
     return false;
 });
 

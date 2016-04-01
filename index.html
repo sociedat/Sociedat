@@ -726,7 +726,7 @@
 							  </div>
 							</div>
                                 <div class="line-btn-row">
-                                    <button type="submit" class="line-btn green">ENVIAR / SEND</button>
+                                    <button type="submit" class="line-btn green" name="contactMessage" value="contactMessage">ENVIAR / SEND</button>
                                 </div>							  
 							</form>
 
@@ -844,10 +844,8 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                            
-                            
-                            
-                            <form class="form-horizontal" name="membershipRequest" action="php/send_forms.php" method="POST"> 
+
+                            <form id="chalala" class="form-horizontal" name='membershipRequest' action='php/send_forms.php' method='post' enctype="multipart/form-data"> 
                                                                 
                                 <div class="form-group">
                                     <label for="exampleInputFile">
@@ -863,12 +861,14 @@
                                         <span class="badge">2</span> Adjunta tu comprobante de pago
                                     </label>                                    
                                     <input type="file" id="membership-payment"  value="Seleccionar archivo" name="file_upload" required>
-                                    <p class="help-block">(extensiones .pdf, .jpg, .png, .bmp).</p>
+                                    <p class="help-block">(extensiones .jpg, .png, .bmp).</p>
+                                    <p class="help-block">(Tam. máximo: 500MB).</p>
                                     <label>
                                         <span class="badge">3</span> LLena el siguiente formulario con tus datos.
                                     </label>  
                                 </div>
-                                                                
+                                
+                            
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Nombre:</label>
                                     <div class="col-sm-9">
@@ -939,7 +939,6 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Twitter:</label>
                                     <div class="col-sm-9">
-                                        <!-- <p class="form-control-static">@usuario</p> -->
                                         <input type="text" name="twitterId" class="form-control" id="" placeholder="@usuario">
                                     </div>
                                 </div>
@@ -981,10 +980,10 @@
                                     <label>¿Asistes a seminarios, conferencias, meetups?</label>
                                     <div class="col-sm-9">
                                         <label class="radio-inline">
-                                            <input type="radio" name="seminarios" id="seminarios" value="Sí" required> Sí
+                                            <input type="radio" name="userGroups" id="userGroups1" value="Sí" required> Sí
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="seminarios" id="seminarios" value="No"> No
+                                            <input type="radio" name="userGroups" id="userGroups2" value="No"> No
                                         </label>
                                     </div>
                                 </div>
@@ -999,12 +998,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label>¿Te gustaría dar pláticas o conferencias? .... cuéntanos tus temas</label>
-                                    <textarea class="form-control" name="Conferences" rows="3" required></textarea>
+                                    <textarea class="form-control" name="giveConferences" rows="3" required></textarea>
                                 </div>
                             <!-- </form> -->
-                                <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
-                                <button type="submit" name="sendMembership" value="sendMembership" class="btn btn-primary line-btn green">Enviar</button>
-                            </form>
+                                
                                 
                             
                         </div>
@@ -1017,7 +1014,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    
+                    <button type="button" class="btn btn-default line-btn light" data-dismiss="modal">Close</button>
+                    <button type="submit" name="sendMembership" value="sendMembership" class="btn btn-primary line-btn green">Enviar</button>
+                            </form>
                 </div>
                             
             </div>

@@ -23,6 +23,19 @@ $end = '
 ';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+    if(isset($_POST['contactMessage'])){
+        echo 'Mensaje desde formulario de contacto <br>';
+        $body = $begin 
+            . "<br>Nombre: " . $_POST['name']
+            . "<br>Correo: " . $_POST['email']
+            . "<br>Asunto: " . $_POST['subject']
+            . "<br>Mensaje:" . $_POST['message'] . $end;
+        $file = '';
+        $subject = $_POST['subject'];
+        send_form($subject, $body, $file);
+    }
+    
     if(isset($_POST['getInfo'])){
         echo 'Solicitud de información de cursos<br>';
         
@@ -37,38 +50,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     
     if($_POST['sendMembership']){
-        print_r($_FILES);
-        echo '---';
-        //require_once('validate_file.php');
+        //print_r($_FILES);
+        //echo '---';
+        require_once('validate_file.php');
         echo 'Registro de membresía<br>';
-        print_r($_FILES['file_upload'], true);
-        $file = $_FILES['file_upload']['tmp_name'];
-        echo "RUTA del archivo: ".$file."<br><br>    ";
+        $file = $target_path;
         $body =
             $begin
-            ."Datos del solicitante:"
-            ."<br>Nombre: ". $_POST['userFirstName']
-            ."<br>Apellidos: ". $_POST['userLastName']
-            ."<br>Fecha de nacimiento: ". $_POST['birth']
-            ."<br>Género: ". $_POST['userGenre']
-            ."<br>Nacionalidad: ". $_POST['nationality']
-            ."<br>Nivel de educación: ". $_POST['educationLevel']
-            ."<br>Ocupación: ". $_POST['occupation']
-            ."<br>E-mail: ". $_POST['userMail']
-            ."<br>Twitter: ". $_POST['twitterId']
-            ."<br>Facebook: ". $_POST['facebookId']
-            ."<br>LinkedIn: ". $_POST['linkedinId']
-            ."<br>GitHub: ". $_POST['githubId']
-            ."<br>Descripción general, intereses (Cuéntanos un poco de ti): <br>"
+            ."<strong>Datos del solicitante: </strong>"
+            ."<br><strong>Nombre: </strong>". $_POST['userFirstName']
+            ."<br><strong>Apellidos: </strong>". $_POST['userLastName']
+            ."<br><strong>Fecha de nacimiento: </strong>". $_POST['birth']
+            ."<br><strong>Género: </strong>". $_POST['userGenre']
+            ."<br><strong>Nacionalidad: </strong>". $_POST['nationality']
+            ."<br><strong>Nivel de educación: </strong>". $_POST['educationLevel']
+            ."<br><strong>Ocupación: </strong>". $_POST['occupation']
+            ."<br><strong>E-mail: </strong>". $_POST['userMail']
+            ."<br><strong>Twitter: </strong>". $_POST['twitterId']
+            ."<br><strong>Facebook: </strong>". $_POST['facebookId']
+            ."<br><strong>LinkedIn: </strong>". $_POST['linkedinId']
+            ."<br><strong>GitHub: </strong>". $_POST['githubId']
+            ."<br><strong>Descripción general, intereses (Cuéntanos un poco de ti): </strong><br>"
             . $_POST['generalDescription']
-            ."<br>Publicaciones (Describe las publicaciones con las que cuentas y compartenos la liga): <br>"
+            ."<br><strong>Publicaciones (Describe las publicaciones con las que cuentas y compartenos la liga): </strong><br>"
             . $_POST['publications']
-            ."<br>¿Asistes a seminarios, conferencias, meetups?: ". $_POST['userGroups']
-            ."<br>¿Qué temas te gustaría que se difundieran, relacionados con ciencia de datos?:<br>"
+            ."<br><strong>¿Asistes a seminarios, conferencias, meetups?: </strong>". $_POST['userGroups']
+            ."<br><strong>¿Qué temas te gustaría que se difundieran, relacionados con ciencia de datos?:</strong><br>"
             . $_POST['interestingTopics']
-            ."<br>¿Te gustaría colaborar a que la ciencia de datos se difunda y crezca en México? Platícanos cómo: <br>"
+            ."<br><strong>¿Te gustaría colaborar a que la ciencia de datos se difunda y crezca en México? Platícanos cómo: </strong><br>"
             . $_POST['diffusionIdeas']
-            ."<br>¿Te gustaría dar pláticas o conferencias? .... cuéntanos tus temas: <br>"
+            ."<br><strong>¿Te gustaría dar pláticas o conferencias? .... cuéntanos tus temas: </strong><br>"
             . $_POST['giveConferences']
             . $end;
         
@@ -107,7 +118,7 @@ function send_form($subject, $body, $file){
     if($file)
         $mail->AddAttachment($file);
     //indico destinatario
-    $address = "vmaceda29@gmail.com";//"contacto@sociedat.org";
+    $address = "contacto@sociedat.org";
     $mail->AddAddress($address, "Sociedad de Científicos de Datos");
     $mail->CharSet = 'UTF-8';
     if(!$mail->Send()) {
@@ -115,6 +126,7 @@ function send_form($subject, $body, $file){
     } else {
         echo "success";
         echo "Mensaje enviado!";
+        echo unlink($file) ? "File Deleted" : "Problem deleting file";
     }
 }
 
