@@ -67,9 +67,15 @@ $membershipForm.submit(function() {
         processData: false,
         data: form_data,                         
         type: 'post',
-        success: function(data){
+        success: function(data, status){
             //alert(data); // display response from the PHP script, if any
             console.log(data);
+            if(status == 'success'){
+                $('.service-confirmation-membership').show();
+            } else {
+                $('.service-error-membership').show();
+            }
+            showConfirmation_services = true;
         }
      });
     return false;
