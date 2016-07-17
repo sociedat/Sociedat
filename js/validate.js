@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
         else var str = $(this).serialize()  + '&' + $.param({ contactMessage:'contactMessage'});;
         $.ajax({
             type: "POST",
-            url: "php/send_forms.php",
+            url: "php/validate_forms.php",
             data: str,
             success: function(msg){
                 $("#sendmessage").addClass("show");

@@ -32,7 +32,7 @@ $('#membership-payment').change(function(){
 var $serviceForm = $('[name=serviceRequest]');
 $serviceForm.submit(function() {
     var paramArr = $(this).serialize() + '&' + $.param({ getInfo:'getInfo'});
-    $.post("php/send_forms.php",
+    $.post("php/validate_forms.php",
            paramArr,
            function(data, status) {
                 if(status == 'success'){
@@ -60,7 +60,7 @@ $membershipForm.submit(function() {
     var form_data = new FormData(this);          
     form_data.append('sendMembership', 'sendMembership');
     $.ajax({
-        url: 'php/send_forms.php', // point to server-side PHP script 
+        url: 'php/validate_forms.php', // point to server-side PHP script 
         dataType: 'text',  // what to expect back from the PHP script, if anything
         cache: false,
         contentType: false,
